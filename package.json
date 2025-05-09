@@ -2,7 +2,7 @@
 	"name": "roslint",
 	"displayName": "roslint",
 	"description": "Integrates ros-lint into VS Code",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "Tacha-S",
 	"repository": {
 		"url": "https://github.com/Tacha-S/roslint"
