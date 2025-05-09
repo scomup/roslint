@@ -39,7 +39,7 @@ export function runRosLint(
   return new Promise((resolve) => {
     const lint = files[0].split('/').reverse()[0].split('.')[1] == 'py' ?
         'pycodestyle' :
-        'cpplint';
+        'cpplint_wrapper';
     const rosLint = 'python3';
     const args = ['-m', `roslint.${lint}`].concat(files);
 
@@ -50,7 +50,7 @@ export function runRosLint(
           rosLint, args, {cwd: workingDirectory}, (error, stdout, stderr) => {
             loggingChannel.appendLine(stdout);
             loggingChannel.appendLine(stderr);
-            resolve(lint == 'cpplint' ? stderr : stdout);
+            resolve(lint == 'cpplint_wrapper' ? stderr : stdout);
             res();
           }));
     });
